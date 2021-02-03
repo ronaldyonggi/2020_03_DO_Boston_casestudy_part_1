@@ -26,6 +26,11 @@
             state: started
             enabled: yes
 
+        - name: create 'docker' usergroup
+          group:
+            name: docker
+            state: present
+
         - name: add ec2-user to docker group so that docker commands can be executed without sudo
           user: 
             name: ec2-user
@@ -73,6 +78,12 @@
         - name: print the initial Jenkins admin password
           debug:
             var: passw.stdout
+
+        - name: add jenkins-user to docker group to allow jenkins to connect to docker.sock (required for pipeline build docker image)
+          user: 
+            name: jenkins
+            group: docker
+            append: yes
         
-        - name: reboot machine (required to adjust changes to user group)
-          reboot: 
+        # - name: reboot machine (required to adjust changes to user group)
+        #   reboot: 
