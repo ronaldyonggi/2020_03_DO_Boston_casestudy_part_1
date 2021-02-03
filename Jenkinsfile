@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "ryongg/pipeline-app"
+        registry = "ryongg/msdmfs0535042"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
