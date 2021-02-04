@@ -140,8 +140,13 @@ On `Build Triggers` settings, make sure to check `GitHub hook trigger for GITScm
 On `Pipeline` configuration, provide the repository URL. If using GitHub, don't forget to change Branch Specifier from `*/master` to `*/main`.
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/fromSCM.jpg)
 
-## Build Dockerized App Image and Push to ECR
+## Jenkins Automate Build and Push Image to DockerHub
 
-1. Create a new repository in the ECR
-2. Select your newly created repository and choose `View push command`
-3. Follow the directions to build and push your image to the ECR repository.
+1. Create a new repository in DockerHub
+2. Go to Jenkins Configuration -> Manage Credentials -> `(global)`
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/global.jpg)
+
+3. Set up credential and save it.
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/cred.jpg)
+
+4. See `Jenkinsfile` for pipeline setup
