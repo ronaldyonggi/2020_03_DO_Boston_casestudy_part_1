@@ -5,7 +5,7 @@ A documentation for CI/CD pipeline utilizing DevOps tools and AWS services.
 <p align="center">
 <img
     alt="Pipeline"
-    src="https://github.com/ronaldyonggi/ProjectPipeline/blob/main/img/marpipe.jpg"
+    src="https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/mario.jpg"
     width="300"
 />
 <h2>
@@ -13,9 +13,14 @@ A documentation for CI/CD pipeline utilizing DevOps tools and AWS services.
 </h2>
 </p>
 
+## Install Ansible in Local Machine
+
+Local machine runs on Lubuntu OS. Followed the steps [here] for Ubuntu-based installation.
 ## Create an EC2 instance using Amazon Linux 2 AMI as base for Jenkins Server
 
-For ease of usage and testing, a security group that allows all inbound traffic is used. This is against security best practices, NOT RECOMMENDED for most real use cases.
+For ease of usage and testing, a security group that allows all inbound traffic is used. This is against security best practices, NOT RECOMMENDED for most real use cases. A free-tier, t2.micro instance running on Amazon Linux 2 AMI OS is used. 
+
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/ami.jpg)
 
 ## Install Git within the EC2 instance (Automated via Ansible Playbook)
 
