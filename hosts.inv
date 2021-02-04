@@ -1,0 +1,2 @@
+[jenkins]
+3.82.222.7 ansible_user=ec2-user
