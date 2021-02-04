@@ -150,3 +150,13 @@ On `Pipeline` configuration, provide the repository URL. If using GitHub, don't 
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/cred.jpg)
 
 4. See `Jenkinsfile` for pipeline setup
+
+## Integrate Jenkins with GitHub
+[Reference](https://www.cprime.com/resources/blog/how-to-integrate-jenkins-github/)
+
+Go to the GitHub project that will be used in the pipeline. Go to Settings -> Webhooks -> Add webhook.
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/webhook.jpg)
+
+
+Set the Payload URL to be the Jenkins URL with `/github-webhook/`added in the end. Then change content type to `application/json`. 
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/webhook2.jpg)
