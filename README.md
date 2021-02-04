@@ -132,21 +132,26 @@ Use `sudo service jenkins restart` to restart Jenkins. This is useful for restar
 ## Jenkins Job Configuration: Pipeline
 
 Choose the Pipeline job.
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/pipeline.jpg)
 
 On `Build Triggers` settings, make sure to check `GitHub hook trigger for GITScm polling`.
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/gitpoll.jpg)
 
 On `Pipeline` configuration, provide the repository URL. If using GitHub, don't forget to change Branch Specifier from `*/master` to `*/main`.
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/fromSCM.jpg)
 
 ## Jenkins Automate Build and Push Image to DockerHub
 
 1. Create a new repository in DockerHub
 2. Go to Jenkins Configuration -> Manage Credentials -> `(global)`
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/global.jpg)
 
 3. Set up credential and save it.
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/cred.jpg)
 
 4. See `Jenkinsfile` for pipeline setup
@@ -155,8 +160,10 @@ On `Pipeline` configuration, provide the repository URL. If using GitHub, don't 
 [Reference](https://www.cprime.com/resources/blog/how-to-integrate-jenkins-github/)
 
 Go to the GitHub project that will be used in the pipeline. Go to Settings -> Webhooks -> Add webhook.
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/webhook.jpg)
 
 
 Set the Payload URL to be the Jenkins URL with `/github-webhook/`added in the end. Then change content type to `application/json`. 
+
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/webhook2.jpg)
