@@ -27,11 +27,13 @@
             state: started
             enabled: yes
 
+          # sudo groupadd docker
         - name: create 'docker' usergroup
           group:
             name: docker
             state: present
 
+          # sudo usermod -aG docker ec2-user
         - name: add ec2-user to docker group so that docker commands can be executed without sudo
           user: 
             name: ec2-user
@@ -43,7 +45,7 @@
         name: java-1.8.0-openjdk-devel
 
     - name: Jenkins installation and configuration
-      block:
+      block: # A block groups a sequence of tasks
         - name: download Jenkins repository using wget
           get_url:
             url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -54,7 +56,7 @@
             state: present
             key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
-        - name: install Jenkins
+        - name: install Jenkins using yum
           yum:
             name: jenkins
             state: present
@@ -80,7 +82,10 @@
           debug:
             var: passw.stdout
 
-        - name: add jenkins-user to docker group to allow jenkins to connect to docker.sock (required for pipeline build docker image)
+          # sudo usermod -aG jenkins
+          # Required so that Jenkins pipeline can have permission to docker.sock. 
+          # This is important for building docker image job.
+        - name: add jenkins-user to docker group to allow jenkins to connect to docker.sock
           user: 
             name: jenkins
             group: docker
