@@ -1,4 +1,4 @@
-# ProjectPipeline
+# Case Study: CI/CD Pipeline, Part 1
 
 A documentation for CI/CD pipeline utilizing DevOps tools and AWS services.
 
@@ -24,7 +24,7 @@ For ease of usage and testing, a security group that allows all inbound traffic 
 
 ## Install Git within the EC2 instance (Automated via Ansible Playbook)
 
-By default, a fresh created EC2 instance doesn't come with Git. In this project, Git installation is automated using Ansible.
+By default, a fresh created EC2 instance doesn't come with Git. In this project, Git installation is automated using Ansible. See `JenkinsServer.yml`
 ```
 - name: ensure git is at the latest version
   yum:
@@ -34,7 +34,7 @@ By default, a fresh created EC2 instance doesn't come with Git. In this project,
 
 ## Install Docker within the EC2 instance (Automated with Ansible)
 
-Installation is automated using Ansible.
+Installation is automated using Ansible. See `JenkinsServer.yml`
 ```
 - name: Docker installation and configuration
     block:
@@ -61,7 +61,7 @@ Installation is automated using Ansible.
 
 ## Install Jenkins within the EC2 instance (Automated with Ansible)
 
-Jenkins installation followed the documentation written in Jenkins official page. Follow the [Red Hat / CentOS, LTS Installation](https://www.jenkins.io/doc/book/installing/linux/#long-term-support-release-3). This process is automated using Ansible as well.
+Jenkins installation followed the documentation written in Jenkins official page. Follow the [Red Hat / CentOS, LTS Installation](https://www.jenkins.io/doc/book/installing/linux/#long-term-support-release-3). This process is automated using Ansible as well. See `JenkinsServer.yml`
 
 ```
 - name: install Java JDK (required for Jenkins installation)
@@ -129,16 +129,14 @@ Jenkins GUI can be accessed via the EC2 instance's public IP address. Add `:8080
 
 Use `sudo service jenkins restart` to restart Jenkins. This is useful for restarting Jenkins after installing plugins.
 
+## Jenkins Job Configuration: Pipeline
+
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/pipeline.jpg)
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/gitpoll.jpg)
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/fromSCM.jpg)
+
 ## Build Dockerized App Image and Push to ECR
 
 1. Create a new repository in the ECR
 2. Select your newly created repository and choose `View push command`
 3. Follow the directions to build and push your image to the ECR repository.
-
-## Install Ansible
-
-By default, `yum` package manager doesn't come with ansible package. Use `amazon-linux-extras` instead to install Ansible.
-
-```
-sudo amazon-linux-extras install -y ansible2
-```
