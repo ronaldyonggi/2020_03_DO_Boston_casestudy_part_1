@@ -164,6 +164,6 @@ Go to the GitHub project that will be used in the pipeline. Go to Settings -> We
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/webhook.jpg)
 
 
-Set the Payload URL to be the Jenkins URL with `/github-webhook/`added in the end. Then change content type to `application/json`. 
+Set the Payload URL to be the Jenkins URL with `/github-webhook/`added at the end. Then change content type to `application/json`. 
 
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/webhook2.jpg)
