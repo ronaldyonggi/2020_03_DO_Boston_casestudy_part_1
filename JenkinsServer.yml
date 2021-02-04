@@ -1,7 +1,8 @@
+# Ansible Playbook Configuration for Jenkins on EC2 instance
 ---
 - name: master server initial configuration
   hosts: master
-  become: yes
+  become: yes # enable privilege escalation
   become_user: root
   gather_facts: false
   tasks:
@@ -85,5 +86,5 @@
             group: docker
             append: yes
         
-        # - name: reboot machine (required to adjust changes to user group)
-        #   reboot: 
+        - name: reboot machine (required to adjust changes to user group)
+          reboot: 
