@@ -1,7 +1,7 @@
 # Ansible Playbook Configuration for Jenkins on EC2 instance
 ---
-- name: master server initial configuration
-  hosts: master
+- name: Jenkins server initial configuration
+  hosts: jenkins 
   become: yes # enable privilege escalation
   become_user: root
   gather_facts: false
