@@ -131,8 +131,13 @@ Use `sudo service jenkins restart` to restart Jenkins. This is useful for restar
 
 ## Jenkins Job Configuration: Pipeline
 
+Choose the Pipeline job.
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/pipeline.jpg)
+
+On `Build Triggers` settings, make sure to check `GitHub hook trigger for GITScm polling`.
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/gitpoll.jpg)
+
+On `Pipeline` configuration, provide the repository URL. If using GitHub, don't forget to change Branch Specifier from `*/master` to `*/main`.
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/fromSCM.jpg)
 
 ## Build Dockerized App Image and Push to ECR
