@@ -6,11 +6,6 @@ pipeline {
     }
     agent any
     stages {
-        // stage ('GitHub Checkout'){
-        //     steps {
-        //         git branch: 'main', url: 'https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1'
-        //     }
-        // }
         stage ('Build docker image'){
             steps {
                 script {
