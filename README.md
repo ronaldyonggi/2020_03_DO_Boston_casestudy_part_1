@@ -17,7 +17,7 @@ A documentation for automated CI/CD pipeline utilizing DevOps tools and AWS serv
 
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/initial.jpg)
  
-From local machine, an EC2 instance was configured with Java, Git, Docker and Jenkins installed. Installationw as automated using Ansible Playbook.
+From local machine, an EC2 instance was configured with Java, Git, Docker and Jenkins installed. Installation was automated using Ansible Playbook.
 
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/architecture.jpg)
 
