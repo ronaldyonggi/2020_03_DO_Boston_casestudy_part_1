@@ -31,7 +31,7 @@ From local machine, an EC2 instance was configured with Java, Git, Docker and Je
 Local machine runs on Lubuntu OS. Followed the steps [here] for Ubuntu-based installation.
 ## Create an EC2 instance using Amazon Linux 2 AMI as base for Jenkins Server
 
-For ease of usage and testing, a security group that allows all inbound traffic is used. This is against security best practices, NOT RECOMMENDED for most real use cases. A free-tier, t2.micro instance running on Amazon Linux 2 AMI OS is used. 
+This pipeline uses free-tier, t2.micro instance running on Amazon Linux 2 AMI.
 
 ![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/ami.jpg)
 
