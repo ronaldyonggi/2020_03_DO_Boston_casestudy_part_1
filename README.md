@@ -1,6 +1,6 @@
 # Case Study: CI/CD Pipeline, Part 1
 
-A documentation for CI/CD pipeline utilizing DevOps tools and AWS services.
+A documentation for automated CI/CD pipeline utilizing DevOps tools and AWS services.
 
 <p align="center">
 <img
@@ -12,6 +12,19 @@ A documentation for CI/CD pipeline utilizing DevOps tools and AWS services.
 "No, not *this* pipeline. I'm talking about DevOps pipeline..."
 </h2>
 </p>
+
+## Deployment Architecture
+
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/initial.jpg)
+ 
+From local machine, an EC2 instance was configured with Java, Git, Docker and Jenkins installed. Installationw as automated using Ansible Playbook.
+
+![](https://github.com/ronaldyonggi/2020_03_DO_Boston_casestudy_part_1/blob/main/screenshots/architecture.jpg)
+
+1. Automatically builds new job whenever a new push to GitHub repository is made
+2. Dockerizes web app and pushes to Docker Hub / ECR
+3. Blue / green deployment using AWS EKR (in progress)
+4. More to come
 
 ## Install Ansible in Local Machine
 
